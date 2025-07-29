@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>lumensaludmental.com - Inicio</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <header>
+        <h1>Bienvenido a lumensaludmental.com</h1>
+        <p>Blog y recursos sobre salud mental, educación y contenidos exclusivos.</p>
+    </header>
+
+    <main>
+        <section>
+            <h2>Noticias y artículos</h2>
+            <p>Próximamente encontrarás aquí artículos y recursos.</p>
+        </section>
+        <section>
+            <h2>Newsletter y e-books</h2>
+            <p>Suscríbete a nuestra newsletter y accede a contenidos exclusivos.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 Mauro La Padula - lumensaludmental.com</p>
+        <p><a href="terminos-condiciones.html">Términos y condiciones</a> | <a href="politica-privacidad.html">Política de privacidad</a> | <a href="politica-cookies.html">Política de cookies</a></p>
+    </footer>
+
+    <!-- Banner de consentimiento de cookies -->
+    <div id="cookie-consent-banner" class="cookie-consent-banner">
+        <p>Usamos cookies para mejorar tu experiencia. Puede cambiar tus preferencias en cualquier momento.</p>
+        <button id="accept-cookies">Aceptar todas</button>
+        <button id="customize-cookies">Modificar cookies</button>
+    </div>
+
+    <!-- Modal para modificar cookies -->
+    <div id="cookie-settings-modal" class="cookie-settings-modal" style="display:none;">
+        <h3>Preferencias de cookies</h3>
+        <form id="cookie-settings-form">
+            <label><input type="checkbox" name="necessary" checked disabled /> Cookies necesarias (siempre activas)</label><br/>
+            <label><input type="checkbox" name="analytics" /> Cookies de análisis</label><br/>
+            <label><input type="checkbox" name="advertising" /> Cookies de publicidad</label><br/>
+            <button type="submit">Guardar preferencias</button>
+            <button type="button" id="cancel-settings">Cancelar</button>
+        </form>
+    </div>
+
+    <script src="cookie-consent.js"></script>
+</body>
+</html>
