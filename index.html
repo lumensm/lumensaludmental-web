@@ -3,50 +3,118 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>lumensaludmental.com - Inicio</title>
+    <title>Lumen Salud Mental - Inicio</title>
     <link rel="stylesheet" href="styles.css" />
+
+    <!-- Google Consent Mode básico -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        // Estado inicial: cookies denegadas
+        gtag('consent', 'default', {
+            'ad_storage': 'denied',
+            'analytics_storage': 'denied',
+            'personalization_storage': 'denied',
+            'functionality_storage': 'denied'
+        });
+        gtag('js', new Date());
+        gtag('config', 'G-XXXXXXX');
+    </script>
+    <style>
+        /* Banner de cookies */
+        #banner-cookies {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: #f7f7f7;
+            border-top: 1px solid #ccc;
+            padding: 15px;
+            font-size: 14px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            text-align: center;
+            z-index: 1000;
+        }
+        #banner-cookies button {
+            margin: 0 5px;
+            padding: 6px 12px;
+            font-size: 14px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        #banner-cookies .aceptar { background: #4CAF50; color: white; }
+        #banner-cookies .rechazar { background: #ccc; color: #333; }
+    </style>
 </head>
 <body>
     <header>
-        <h1>Bienvenido a lumensaludmental.com</h1>
-        <p>Blog y recursos sobre salud mental, educación y contenidos exclusivos.</p>
+        <h1>Lumen Salud Mental</h1>
     </header>
 
     <main>
-        <section>
-            <h2>Noticias y artículos</h2>
-            <p>Próximamente encontrarás aquí artículos y recursos.</p>
-        </section>
-        <section>
-            <h2>Newsletter y e-books</h2>
-            <p>Suscríbete a nuestra newsletter y accede a contenidos exclusivos.</p>
-        </section>
+        <h2>Bienvenido/a</h2>
+        <p>Este es el sitio web oficial de <strong>lumensaludmental.com</strong>. Aquí encontrarás artículos sobre salud mental, recursos educativos, ebooks y más.</p>
+
+        <nav>
+            <ul>
+                <li><a href="terminos-condiciones.html">Términos y Condiciones</a></li>
+                <li><a href="politica-privacidad.html">Política de Privacidad</a></li>
+                <li><a href="politica-cookies.html">Política de Cookies</a></li>
+            </ul>
+        </nav>
     </main>
 
     <footer>
-        <p>© 2025 Mauro La Padula - lumensaludmental.com</p>
-        <p><a href="terminos-condiciones.html">Términos y condiciones</a> | <a href="politica-privacidad.html">Política de privacidad</a> | <a href="politica-cookies.html">Política de cookies</a></p>
+        <p>&copy; 2025 Lumen Salud Mental. Todos los derechos reservados.</p>
     </footer>
 
-    <!-- Banner de consentimiento de cookies -->
-    <div id="cookie-consent-banner" class="cookie-consent-banner">
-        <p>Usamos cookies para mejorar tu experiencia. Puede cambiar tus preferencias en cualquier momento.</p>
-        <button id="accept-cookies">Aceptar todas</button>
-        <button id="customize-cookies">Modificar cookies</button>
+    <!-- Banner de cookies -->
+    <div id="banner-cookies">
+        <p>Usamos cookies para mejorar tu experiencia. Puedes aceptar o rechazar su uso.  
+        Consulta nuestra <a href="politica-cookies.html">Política de Cookies</a> para más información.</p>
+        <div>
+            <button class="aceptar" id="btn-aceptar">Aceptar</button>
+            <button class="rechazar" id="btn-rechazar">Rechazar</button>
+        </div>
     </div>
 
-    <!-- Modal para modificar cookies -->
-    <div id="cookie-settings-modal" class="cookie-settings-modal" style="display:none;">
-        <h3>Preferencias de cookies</h3>
-        <form id="cookie-settings-form">
-            <label><input type="checkbox" name="necessary" checked disabled /> Cookies necesarias (siempre activas)</label><br/>
-            <label><input type="checkbox" name="analytics" /> Cookies de análisis</label><br/>
-            <label><input type="checkbox" name="advertising" /> Cookies de publicidad</label><br/>
-            <button type="submit">Guardar preferencias</button>
-            <button type="button" id="cancel-settings">Cancelar</button>
-        </form>
-    </div>
+    <script>
+        const banner = document.getElementById('banner-cookies');
+        const aceptar = document.getElementById('btn-aceptar');
+        const rechazar = document.getElementById('btn-rechazar');
 
-    <script src="cookie-consent.js"></script>
+        // Comprobar si el usuario ya eligió
+        if (localStorage.getItem('cookies-consent')) {
+            banner.style.display = 'none';
+        }
+
+        aceptar.addEventListener('click', () => {
+            // Aceptar cookies
+            gtag('consent', 'update', {
+                'ad_storage': 'granted',
+                'analytics_storage': 'granted',
+                'personalization_storage': 'granted',
+                'functionality_storage': 'granted'
+            });
+            localStorage.setItem('cookies-consent', 'aceptadas');
+            banner.style.display = 'none';
+        });
+
+        rechazar.addEventListener('click', () => {
+            // Mantener cookies desactivadas
+            gtag('consent', 'update', {
+                'ad_storage': 'denied',
+                'analytics_storage': 'denied',
+                'personalization_storage': 'denied',
+                'functionality_storage': 'denied'
+            });
+            localStorage.setItem('cookies-consent', 'rechazadas');
+            banner.style.display = 'none';
+        });
+    </script>
 </body>
 </html>
