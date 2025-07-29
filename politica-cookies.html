@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Política de Cookies - lumensaludmental.com</title>
+    <link rel="stylesheet" href="styles.css" />
+
+    <!-- Script de Google Consent Mode (versión básica) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('consent', 'default', {
+            'ad_storage': 'denied',
+            'analytics_storage': 'denied',
+            'personalization_storage': 'denied',
+            'functionality_storage': 'denied'
+        });
+        gtag('js', new Date());
+        gtag('config', 'G-XXXXXXX');
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Política de Cookies</h1>
+    </header>
+
+    <main>
+        <article>
+            <p><strong>Última actualización:</strong> 29 de julio de 2025</p>
+
+            <h2>1. ¿Qué son las cookies?</h2>
+            <p>Las cookies son pequeños archivos de texto que los sitios web colocan en su dispositivo para mejorar su experiencia, permitir funcionalidades básicas, personalizar el contenido y realizar análisis de uso.</p>
+
+            <h2>2. Tipos de cookies que utilizamos</h2>
+            <ul>
+                <li><strong>Cookies esenciales:</strong> necesarias para el correcto funcionamiento del sitio web.</li>
+                <li><strong>Cookies de preferencias:</strong> recuerdan sus configuraciones y opciones elegidas (por ejemplo, idioma o región).</li>
+                <li><strong>Cookies analíticas:</strong> permiten obtener estadísticas anónimas sobre el uso del sitio, por ejemplo mediante Google Analytics.</li>
+                <li><strong>Cookies de publicidad:</strong> se utilizan para mostrar anuncios relevantes según sus intereses.</li>
+            </ul>
+
+            <h2>3. Cookies de terceros</h2>
+            <p>Podemos permitir que terceros coloquen cookies en su dispositivo para fines de análisis (por ejemplo, Google Analytics) o publicidad (Google Ads, redes sociales, etc.). Cada tercero es responsable de sus propias cookies y políticas de privacidad.</p>
+
+            <h2>4. Google Consent Mode</h2>
+            <p>Este sitio implementa el <strong>Google Consent Mode</strong> para que los servicios de Google (Analytics, Ads, Tag Manager) respeten sus preferencias de cookies. Hasta que usted otorgue su consentimiento, el almacenamiento de datos para análisis y publicidad estará desactivado.</p>
+
+            <h2>5. ¿Cómo gestionar sus cookies?</h2>
+            <p>Puede configurar sus preferencias en cualquier momento mediante el botón a continuación:</p>
+
+            <button id="modificar-cookies">Modificar cookies</button>
+
+            <p>También puede desactivar o eliminar cookies desde la configuración de su navegador.</p>
+
+            <h2>6. Más información</h2>
+            <p>Para más información sobre cómo tratamos los datos recopilados por cookies, consulte nuestra <a href="politica-privacidad.html">Política de Privacidad</a>.</p>
+        </article>
+    </main>
+
+    <footer>
+        <p><a href="index.html">Inicio</a> | <a href="terminos-condiciones.html">Términos y Condiciones</a></p>
+    </footer>
+
+    <!-- Script para reabrir el banner de consentimiento -->
+    <script>
+        document.getElementById('modificar-cookies').addEventListener('click', function() {
+            // Aquí se podría reabrir un banner de cookies o reiniciar las preferencias
+            alert("Aquí se volverá a mostrar el banner de cookies (personalizable).");
+        });
+    </script>
+</body>
+</html>
